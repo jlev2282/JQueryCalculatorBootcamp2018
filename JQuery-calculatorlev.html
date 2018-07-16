@@ -98,6 +98,7 @@
             var isOperatorChosen = false;
             var isCalculated = false;
             var isCoolPersonChosen = false;
+            var randomCool = 0;
             var CoolPeople =[
                 {
                     name: "Lebron James",
@@ -131,6 +132,7 @@
                 secondNumber = "";
                 operator = "";
                 isOperatorChosen = false;
+                isCoolPersonChosen = false;
                 isCalculated = false;
                 name = "Cool Man";
                 image = "whos_cool_guy.jpg";
@@ -187,8 +189,54 @@
                 }
 
             });
-  
-       
+
+            $(".equal").on("click", function() {
+
+                //if equal has been clicked already don't rerun calculation
+                if(isCalculated) {
+                    return false;
+                }
+
+                
+                // Set isCalculated to true so that we don't get in a weird UI state by clicking buttons again
+                isCalculated = true;
+
+                // Use parseInt to convert our string representation of numbers into actual integers
+                firstNumber = parseInt(firstNumber);
+                secondNumber = parseInt(secondNumber);
+
+                // Based on the operator that was chosen.
+                // Then run the operation and set the HTML of the result of that operation
+                if (operator === "plus") {
+                result = firstNumber + secondNumber;
+                }
+
+                else if (operator === "minus") {
+                result = firstNumber - secondNumber;
+                }
+
+                else if (operator === "times") {
+                result = firstNumber * secondNumber;
+                }
+
+                else if (operator === "divide") {
+                result = firstNumber / secondNumber;
+                }
+
+                else if (operator === "power") {
+                result = Math.pow(firstNumber, secondNumber);
+                }
+
+                $("#result").text(result);
+                $("#cool-person-fact").text(CoolPeople[randomCool].fact);
+
+
+            });
+
+            $(".clear").on("click", function() {
+                getCalcReady();
+            });
+
 
             getCalcReady();
 
