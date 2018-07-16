@@ -1,0 +1,15 @@
+.jumbotron {
+
+
+    /* font-family: 'Permanent Marker', cursive; */
+
+    /* font-family: 'Orbitron', sans-serif; */
+
+    font-family: 'Monoton', cursive;
+
+}
+
+#cool-person-fact {
+    height: 170px;
+    overflow: auto;
+}
