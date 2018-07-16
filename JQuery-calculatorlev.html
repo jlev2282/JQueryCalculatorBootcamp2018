@@ -73,7 +73,7 @@
                     <h3 class="card-header">Who's Cool?</h3>
                     <div class="card-body">
                         <h1 id="cool-persons-name"></h1>
-                        <img id="cool-person-picture">
+                        <img id="cool-person-picture" style="width: 100%;">
                         <p id="cool-person-fact"></p>
                     </div>
                 </div>
@@ -90,9 +90,9 @@
             var secondNumber = 0;
             var operator = "";
             var result = 0;
-            var name = "Cool Man";
-            var image = "whos_cool_guy.jpg";
-            var fact = "I'm not really cool";
+            var name = "";
+            var image = "";
+            var fact = "";
             var isOperatorChosen = false;
             var isCalculated = false;
             var CoolPeople =[
@@ -129,9 +129,17 @@
                 operator = "";
                 isOperatorChosen = false;
                 isCalculated = false;
+                name = "Cool Man";
+                image = "whos_cool_guy.jpg";
+                fact = "I'm not really cool. I mean...socially, yes I'm very cool. My lack of \"cool\" used to be completely out of my control. You see....I have a disease called Hypothyroidism that prevents me from regulating my body temperature. But yes. I'm VERY cool socially.";
 
                 $("#first-number, #second-number, #operator, #result").empty();
+                $('#cool-persons-name').text(name);
+                $('#cool-person-picture').attr('src', image);
+                $('#cool-person-fact').text(fact);
             }
+
+            getCalcReady();
 
         });
 
